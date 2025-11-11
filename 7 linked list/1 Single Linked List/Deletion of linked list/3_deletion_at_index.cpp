@@ -35,7 +35,7 @@ node* deleteatk(node* head,int k){
     while(temp!=NULL){
         count++;
          if(count==k){
-            prev->next=prev->next->next;
+             prev->next=prev->next->next;
             delete temp;
             break;
         }

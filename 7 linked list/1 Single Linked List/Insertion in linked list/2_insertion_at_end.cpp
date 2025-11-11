@@ -40,6 +40,7 @@ void print(node* head){
 
 node* insertend(node* head,int val){
     if(head==NULL) return new node(val,head);
+    
     node* temp=head;
     while(temp->next!=NULL){
         temp=temp->next;

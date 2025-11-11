@@ -14,7 +14,7 @@ int getSecondLargest(vector<int> &arr) {
     for (int i = 0; i < arr.size(); i++) {
         if (arr[i] > seclargest && arr[i] < largest) {
             seclargest = arr[i];
-        }
+        }125
     }
     return seclargest;
 }
