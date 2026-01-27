@@ -39,6 +39,7 @@ void print(node* head){
 }
 
 node* insertatk(node* head,int val,int k){
+    
     if(head==NULL){
         if(k==1){
             return new node(val);
@@ -52,14 +53,14 @@ node* insertatk(node* head,int val,int k){
 
     int count=0;
     node *temp=head;
-    while(temp!=NULL){
+    while(temp->next!=NULL){
         count++;
         if(count==(k-1)){
             node *next1=temp->next->next;
             node *newnode=new node(val);
             temp->next=newnode;
             newnode->next=next1;
-
+  
              // node *x = new node(val);
             // x->next = temp->next;
             // temp->next = x;

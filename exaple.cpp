@@ -1,72 +1,68 @@
 #include <iostream>
+#include <vector>
+#include <algorithm>
 using namespace std;
 
-// Define node structure
-struct Node {
+struct Node{
     int data;
-    Node* next;
+    Node* left;
+    Node* right;
+
+    Node(int val){
+        data=val;
+        left=nullptr;
+        right=nullptr;
+    }
+
 };
 
-
-void insertAtEnd(Node*& head, int value) {
-    Node* newNode = new Node();
-    newNode->data = value;
-    newNode->next = nullptr;
-
-    if (head == nullptr) {
-        head = newNode;
-        return;
-    }
-
-    Node* temp = head;
-    while (temp->next != nullptr) {
-        temp = temp->next;
-    }
-    temp->next = newNode;
+void inorder(Node* root){
+     if(root==NULL) return;
+     inorder(root->left);
+     cout << root->data << " ";
+     inorder(root->right);
 }
 
-
-void findMiddle(Node* head) {
-    if (head == nullptr) {
-        cout << "The list is empty!" << endl;
-        return;
-    }
-
-    Node* slow = head;
-    Node* fast = head;
-
-    // Move fast by 2 and slow by 1 step
-    while (fast != nullptr && fast->next != nullptr) {
-        slow = slow->next;
-        fast = fast->next->next;
-    }
-
-    cout << "Middle element is: " << slow->data << endl;
+void preorder(Node* root){
+    if (root==NULL) return;
+    cout << root->data << " ";
+    preorder(root->left);
+    preorder(root->right);
 }
 
-
-void display(Node* head) {
-    Node* temp = head;
-    cout << "Linked List: ";
-    while (temp != nullptr) {
-        cout << temp->data << " -> ";
-        temp = temp->next;
-    }
-    cout << "NULL" << endl;
+void postorder(Node* root){
+    if (root==NULL) return;
+    postorder(root->left);
+    postorder(root->right);
+    cout << root->data << " ";
 }
 
-int main() {
-    Node* head = nullptr;
+Node* buildtree(){
+    int x;
+    cin>>x;
 
-   
-    insertAtEnd(head, 10);
-    insertAtEnd(head, 20);
-    insertAtEnd(head, 30);
-    insertAtEnd(head, 40);
-    insertAtEnd(head, 50);
+    if (x==-1) return nullptr;
 
-    display(head);
-    findMiddle(head);
+    Node* root=new Node(x);
+    root->left=buildtree();
+    root->right=buildtree();
+
+    return root;
+}
+
+int main(){
+    Node* root=buildtree();
+
+    cout << "Inorder : " ;
+    inorder(root);
+    cout << endl;
+
+    cout << "preorder : " ;
+    preorder(root);
+    cout << endl;
+
+    cout << "Postorder : " ;
+    postorder(root);
 
     return 0;
 }

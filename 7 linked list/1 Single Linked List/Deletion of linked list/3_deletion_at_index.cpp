@@ -42,7 +42,7 @@ node* deleteatk(node* head,int k){
         prev=temp;
         temp=temp->next;
     }
-    return head;
+    return head;   
 }
 
 node* arrtolinkedlist(vector<int> &arr){

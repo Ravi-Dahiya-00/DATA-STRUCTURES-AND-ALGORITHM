@@ -38,9 +38,10 @@ int main(){
                 int temp=arr[j];
                 arr[j]=arr[j+1];
                 arr[j+1]=temp;
-                didswap=1;
+                // didswap=1;
             }
             }
+
        if (didswap == 0){
         break;
         }
