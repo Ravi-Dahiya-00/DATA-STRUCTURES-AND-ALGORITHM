@@ -29,7 +29,7 @@ int main() {
     }
 
     // ---------------- Insertion Sort ----------------
-    for (int i = 0; i <= n; i++) {
+    for (int i = 1; i < n; i++) {
         int j = i;
    
         // Compare current element with previous ones

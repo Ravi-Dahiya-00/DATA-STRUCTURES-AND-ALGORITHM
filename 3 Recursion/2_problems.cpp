@@ -5,36 +5,37 @@ using namespace std;
 
 void nameprinting(int i,int n){
     if (i>n) return;
-    cout << "ravi" << endl;
+    cout << "ravi" ;
     nameprinting(i+1,n);
 }
 
 
 void numberprinting(int i,int n){
     if (i>n) return;
-    cout << i << endl;
+    cout << i ;
     numberprinting(i+1,n);
 }
 
 void reversenumberprinting(int i,int n){
     if (i<1) return;
-    cout << i << endl;
+    cout << i ;
     reversenumberprinting(i-1,n);
 }
 
 void backnumberprinitng(int i,int n){
     if (i<1) return;
     backnumberprinitng(i-1,n);
-    cout << i << endl;
+    cout << i;
 }
 
 void backreversenumberprinitng(int i,int n){
     if (i>n) return;
     
     backreversenumberprinitng(i+1,n);
-    cout << i << endl;
+    cout << i ;
     
 }
+
 
 
  int findSum(int i,int sum) {
@@ -92,17 +93,26 @@ int main(){
     cin >> n;
 
     nameprinting(1,n);
+    cout << endl;
     numberprinting(1,n);
+    cout << endl;
     reversenumberprinting(n,n);
+    cout << endl;
+
 
 
     // using backtracking method
     backnumberprinitng(n,n);
+    cout << endl;
+
     backreversenumberprinitng(1,n);
+    cout << endl;
+
 
 
     int sum=0;
     cout << findSum(n,sum) << endl;
+    
 
     
     cout << findSum2(n) << endl;

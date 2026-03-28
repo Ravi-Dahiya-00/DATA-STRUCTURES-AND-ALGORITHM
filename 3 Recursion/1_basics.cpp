@@ -25,7 +25,7 @@ int main(){
         Without a base case, recursion goes infinite → stack overflow.
         Recursion uses stack memory because each function call is stored in the call stack.
         Think of recursion as breaking a big problem into smaller subproblems.
-                   
+
         
         A segmentation fault (often called segfault) happens when your program tries to access memory that it’s not allowed to.
         It’s a runtime error (happens while program is running, not during compilation).

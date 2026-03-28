@@ -16,9 +16,7 @@ public:
     node (int data1){
         data=data1;
         next=nullptr;
-    }
-
-   
+    }  
 };
 
 node* arrtolinkedlist(vector<int> &arr){

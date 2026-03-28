@@ -3,66 +3,24 @@
 #include <algorithm>
 using namespace std;
 
-struct Node{
-    int data;
-    Node* left;
-    Node* right;
-
-    Node(int val){
-        data=val;
-        left=nullptr;
-        right=nullptr;
-    }
-
-};
-
-void inorder(Node* root){
-     if(root==NULL) return;
-     inorder(root->left);
-     cout << root->data << " ";
-     inorder(root->right);
+void reversearray(int i, int arr[] , int j){
+    if (i>=j/2) return;
+    swap(arr[i],arr[j-i-1]);
+    reversearray(i+1,arr,j);
 }
 
-void preorder(Node* root){
-    if (root==NULL) return;
-    cout << root->data << " ";
-    preorder(root->left);
-    preorder(root->right);
-}
-
-void postorder(Node* root){
-    if (root==NULL) return;
-    postorder(root->left);
-    postorder(root->right);
-    cout << root->data << " ";
-}
-
-Node* buildtree(){
-    int x;
-    cin>>x;
-
-    if (x==-1) return nullptr;
-
-    Node* root=new Node(x);
-    root->left=buildtree();
-    root->right=buildtree();
-
-    return root;
-}
 
 int main(){
-    Node* root=buildtree();
+   int n;
+   cin>>n;
+   int arr[50];
 
-    cout << "Inorder : " ;
-    inorder(root);
-    cout << endl;
+    for (int i=0;i<=5;i++){
+        cin >> arr[i];
+    }
 
-    cout << "preorder : " ;
-    preorder(root);
-    cout << endl;
+    reversearray(0,arr,n);
+    for (int i=0;i<=5;i++) cout << arr[i] << " ";
 
-    cout << "Postorder : " ;
-    postorder(root);
 
-    return 0;
 }
