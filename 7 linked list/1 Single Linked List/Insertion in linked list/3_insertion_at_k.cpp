@@ -39,42 +39,32 @@ void print(node* head){
 }
 
 node* insertatk(node* head,int val,int k){
-    
-    if(head==NULL){
-        if(k==1){
-            return new node(val);
-        }
+     // Case 1: Insert at beginning
+    if(k == 1){
+        node* newnode = new node(val);
+        newnode->next = head;
+        return newnode;
     }
 
-    if (k==1){
-        node *temp=new node(val,head);
-        return temp;
-    }
+    node* temp = head;
+    int count = 1;
 
-    int count=0;
-    node *temp=head;
-    while(temp->next!=NULL){
+    // Move to (k-1)th node
+    while(temp != NULL && count < k - 1){
+        temp = temp->next;
         count++;
-        if(count==(k-1)){
-            node *next1=temp->next->next;
-            node *newnode=new node(val);
-            temp->next=newnode;
-            newnode->next=next1;
-  
-             // node *x = new node(val);
-            // x->next = temp->next;
-            // temp->next = x;
-            
-            break;
-
-            // both works fine
-        }
-        temp=temp->next;
-
-       
     }
 
-     return head;
+    // If position invalid
+    if(temp == NULL) return head;
+
+    // Insert node
+    node* newnode = new node(val);
+    newnode->next = temp->next;
+    temp->next = newnode;
+
+    return head;
+
     
 }
 
