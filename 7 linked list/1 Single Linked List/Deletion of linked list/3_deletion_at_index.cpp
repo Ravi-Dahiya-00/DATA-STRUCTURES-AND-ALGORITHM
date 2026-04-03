@@ -31,7 +31,7 @@ node* deleteatk(node* head,int k){
     int count=0;
     node*temp=head;
     node* prev=NULL;
-
+    
     while(temp!=NULL){
         count++;
          if(count==k){

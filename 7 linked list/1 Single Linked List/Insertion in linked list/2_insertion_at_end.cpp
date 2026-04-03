@@ -27,7 +27,6 @@ node* arrtolinkedlist(vector<int> &arr){
         mover=temp;
     }
     return head;
-
 }
 
 void print(node* head){

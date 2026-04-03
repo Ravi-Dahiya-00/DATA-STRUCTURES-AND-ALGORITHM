@@ -82,5 +82,5 @@ int main(){
     head=insertatk(head,n,k);
 
     print(head);
-
+ 
 }
