@@ -24,7 +24,6 @@ TreeNode* insert(TreeNode* root,int key){
     else {
         root->right=insert(root->right,key);
     }
-
     return root;
 }
 

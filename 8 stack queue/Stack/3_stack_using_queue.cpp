@@ -7,8 +7,6 @@ private:
     queue<int> q;
 
 public:
-
-
     void push(int x) {
         q.push(x);
         

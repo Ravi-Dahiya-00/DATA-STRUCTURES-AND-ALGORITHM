@@ -24,7 +24,7 @@ void inorder(Node* root){
 }
 
 
-    vector<vector<int>> levelOrder(Node* root) {
+vector<vector<int>> levelOrder(Node* root) {
         vector<vector<int>> ans;
         if (root==NULL) return ans;
         queue <Node*> q;

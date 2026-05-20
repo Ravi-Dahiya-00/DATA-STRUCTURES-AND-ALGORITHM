@@ -19,8 +19,8 @@ struct Node {
 Node* buildTree() {
     int x;
     cin >> x;
-
     if (x == -1) return nullptr;
+
 
     Node* root = new Node(x);
     root->left = buildTree();
