@@ -34,13 +34,13 @@ node* deleteatk(node* head,int k){
     
     while(temp!=NULL){
         count++;
-         if(count==k){
-             prev->next=prev->next->next;
-            delete temp;
-            break;
-        }
         prev=temp;
         temp=temp->next;
+        if(count==k){
+            prev->next=prev->next->next;
+           delete temp;
+           break;
+       }
     }
     return head;   
 }
